@@ -43,6 +43,8 @@ img {
 
 .header-container {
   display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
 .section {
@@ -51,6 +53,7 @@ img {
 }
 
 /* Nav */
+
 .nav {
   display: flex;
   align-items: center;
@@ -126,6 +129,7 @@ img {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   margin-right: 76px;
+  padding: 17px 0;
 }
 
 .logo-studio {
@@ -134,7 +138,6 @@ img {
 
 .header-address {
   font-style: normal;
-  margin-left: auto;
   display: none;
 }
 
@@ -166,12 +169,22 @@ img {
   border: none;
   background-color: transparent;
   cursor: pointer;
-  margin-left: auto;
-  padding: 0;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-open-button:hover,
+.menu-open-button:focus {
+  background-color: #404bbf;
 }
 
 .icon-open-button {
   fill: #2e2f42;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-open-button:hover,
+.icon-open-button:focus {
+  fill: #ffffff;
 }
 
 /* Mobile menu */
@@ -179,6 +192,9 @@ img {
 .mobile-menu {
   position: fixed;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   top: 0;
   left: 0;
   width: 100vw;
@@ -248,27 +264,30 @@ img {
 }
 
 .address-wrap {
-  display: flex;
-  margin-top: auto;
 }
 
 .mobile-address {
 }
 
 .mobile-address-list {
+  display: flex;
   flex-direction: column;
   gap: 24px;
+  margin-bottom: 48px;
 }
 
 .mobile-address-link {
-}
-
-.mobile-social-wrap {
-  margin-top: auto;
-  display: flex;
+  color: #434455;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
 }
 
 .mobile-social-list {
+  display: flex;
   gap: 40px;
 }
 
@@ -287,6 +306,15 @@ img {
   align-items: center;
   justify-content: center;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-icon-link:hover,
+.mobile-icon-link:focus {
+  background-color: #404bbf;
+}
+
+.mobile-color {
+  color: #404bbf;
 }
 
 /* Main content */
@@ -579,7 +607,7 @@ img {
 
 .footer {
   background-color: #2e2f42;
-  padding: 100px 0;
+  padding: 96px 0;
 }
 
 .footer-logo-studio {
@@ -621,9 +649,6 @@ img {
   text-align: center;
 }
 
-.footer-text {
-}
-
 .footer-social-list {
   display: flex;
   gap: 16px;
@@ -633,7 +658,7 @@ img {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  gap: 72px;
+  row-gap: 72px;
 }
 
 .footer-icon-link {
@@ -959,9 +984,26 @@ img {
 
   .header-address {
     display: flex;
+    align-items: center;
+  }
+
+  .address-list {
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  .address-link {
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
   }
 
   .menu-open-button {
+    display: none;
+  }
+
+  .mobile-menu {
     display: none;
   }
 
@@ -1026,7 +1068,27 @@ img {
     width: calc((100% - 24px) / 2);
   }
 
+  .footer {
+    padding: 100px 0;
+  }
+
+  .footer-box {
+    margin-left: 108px;
+  }
+
   .footer-logo {
+    text-align: start;
+  }
+
+  .footer-text {
+    margin-right: 24px;
+  }
+
+  .footer-social {
+    margin: 0;
+  }
+
+  .footer-social-paragraf {
     text-align: start;
   }
 
@@ -1064,8 +1126,19 @@ img {
   }
 
   .nav-list {
-    display: flex;
     gap: 40px;
+  }
+
+  .address-list {
+    gap: 40px;
+    flex-direction: row;
+  }
+
+  .address-link {
+    padding: 24px 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
   }
 
   .section-effective {
@@ -1142,12 +1215,8 @@ img {
   }
 
   .footer-box {
-    gap: 0;
     flex-wrap: nowrap;
-  }
-
-  .footer-logo {
-    text-align: start;
+    margin-left: auto;
   }
 
   .footer-paragraf {
@@ -1158,36 +1227,18 @@ img {
     margin: 0 auto;
   }
 
-  .footer-social-paragraf {
-    text-align: start;
-  }
-
   .footer-text {
     margin-right: 80px;
   }
 
   .footer-subscribe {
     margin-left: auto;
+    margin-right: 0;
   }
 
   .subscribe-form {
     flex-wrap: nowrap;
     gap: 24px;
     justify-content: start;
-  }
-
-  .subscribe-text {
-    text-align: start;
-  }
-
-  .modal {
-    width: 408px;
-    min-height: 584px;
-    padding: 24px;
-    padding-top: 72px;
-  }
-
-  .modal-hedding {
-    width: 360px;
   }
 }
