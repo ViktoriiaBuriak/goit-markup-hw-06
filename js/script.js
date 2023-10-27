@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   var toggleButton = document.getElementById("toggleButton");
-  var closeButton = document.getElementById("closeButton"); // отримуємо кнопку закриття
+  var closeButton = document.getElementById("closeButton");
   var mobileMenu = document.querySelector(".mobile-menu");
   var isOpen = false;
 
@@ -25,5 +25,5 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   toggleButton.addEventListener("click", toggleMenu);
-  closeButton.addEventListener("click", closeMenu); // додаємо обробник подій до кнопки закриття
+  closeButton.addEventListener("click", closeMenu);
 });
